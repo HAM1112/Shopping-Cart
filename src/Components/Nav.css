@@ -1,0 +1,26 @@
+.navbar {
+    background-color: chartreuse;
+    display: flex;
+    height: 100px;
+}
+.navbar > .logo {
+    flex: 3;
+}
+.navbar > .nav-link{
+    flex: 2;
+}
+.navbar > .cart-logo{
+    flex: 1;
+}
+
+
+.navbar a {
+    color: #0060B6;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color:#00A0C6; 
+    text-decoration:none; 
+    cursor:pointer;  
+}
