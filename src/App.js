@@ -5,6 +5,7 @@ import './App.css';
 import Cart from './Components/Cart';
 import Contact from './Components/Contact';
 import Home from './Components/Home';
+import Item from './Components/Item';
 import Nav from './Components/Nav';
 import Shop from './Components/Shop';
 
@@ -18,6 +19,7 @@ function App() {
           <Route path='/cart' exact element={<Cart />} />
           <Route path='/contact' exact element={<Contact />} />
           <Route path='/shop' exact element={<Shop />} />
+          <Route path='/shop/:id' exact element={<Item />} />
 
         </Routes>
       </BrowserRouter>
