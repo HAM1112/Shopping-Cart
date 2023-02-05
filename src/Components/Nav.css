@@ -24,4 +24,9 @@
     flex: 1;
 }
 
-
+.cart-count{
+    background-color: #ffffff;
+    color: #404258;
+    border-radius: 100%;
+    padding: 2px;
+}

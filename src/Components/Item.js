@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import "./Shop.css"
+import "./items.css"
 
 function Item({match}) {
   const {id} = useParams();
@@ -24,10 +24,25 @@ function Item({match}) {
 
 
   return (
-    <div className='book-display'>
-      <div > 
-        {Book? <div>{Book.volumeInfo.title}</div> : <div>Loading</div> }
-      </div>
+    <div>
+      
+        {Book? <div className='book-display'>
+          <div className='book-image'>
+            <img src={Book.volumeInfo.imageLinks.thumbnail} alt="" srcset="" />
+          </div>
+          <div className='book-details'>
+            <h1>{Book.volumeInfo.title}</h1>
+            <p>description</p>
+            <p>autors</p>
+            <p>no. page</p>
+            <p>publis date</p>
+            <p>publisher</p>
+            <p>rating</p>
+           <span>price</span>
+          
+          </div>
+        </div> : <div className='loading'>Loading.....</div> }
+      
     </div>
   )
 }

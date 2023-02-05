@@ -12,7 +12,7 @@ function Nav() {
             <Link to='/contact' >contact</Link> 
         </div>
         <div className='cart-logo'>
-            <Link to='/cart'>Cart</Link>
+            <Link to='/cart'>Cart <sup className='cart-count'>0</sup> </Link>
         </div>
     </nav>
   )
