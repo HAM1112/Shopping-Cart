@@ -21,8 +21,9 @@ function Shop() {
       });
   }, []);
 
-  const handleCardClick = ()=>{
-    console.log("hii");
+  const handleAddCart = (e)=>{
+    e.preventDefault()
+    console.log("hii clicked");
   }
 
   return (
@@ -38,14 +39,14 @@ function Shop() {
           const bookPrice = (bookRating*2.5)  
           return (
             <Link to={`/shop/${book.id}`}>
-              <div className='book-card' onClick={handleCardClick}>
+              <div className='book-card' >
                 <img src={bookInfo.imageLinks.thumbnail} alt="" />
                 <h3>{bookInfo.title}</h3>
                 <div>
                   <p>Rating :{bookRating}</p>
                   <p>${bookPrice}</p>
                 </div>
-                <button>Add To Cart</button>
+                <button onClick={handleAddCart}>Add To Cart</button>
               </div>
             </Link>
           )

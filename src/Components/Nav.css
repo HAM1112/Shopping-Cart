@@ -1,26 +1,27 @@
+
 .navbar {
-    background-color: chartreuse;
+    background-color: #404258;
     display: flex;
     height: 100px;
 }
 .navbar > .logo {
     flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
 }
 .navbar > .nav-link{
     flex: 2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 .navbar > .cart-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex: 1;
 }
 
 
-.navbar a {
-    color: #0060B6;
-    text-decoration: none;
-}
-
-.navbar a:hover {
-    color:#00A0C6; 
-    text-decoration:none; 
-    cursor:pointer;  
-}
