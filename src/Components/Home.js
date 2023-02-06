@@ -3,8 +3,8 @@ import Nav from './Nav'
 
 function Home() {
   return (
-    <div>
-      Home Page Rendered
+    <div className='home'>
+      Always be in the shade of knowledge
     </div>
   )
 }
