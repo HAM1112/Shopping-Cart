@@ -24,7 +24,7 @@ function Item({match}) {
 
 
   return (
-    <div>
+    <div >
       
         {Book? <div className='book-display'>
           <div className='book-image'>
