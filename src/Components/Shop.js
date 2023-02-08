@@ -31,7 +31,7 @@ function Shop(props) {
 
 
   const handleAddCart = (item)=>{
-    console.log(item);
+    //console.log(item);
     setItem(item)
   }
 

@@ -14,7 +14,7 @@ function App() {
   const [CartItems, setCartItems] = useState('');
   
   useEffect(() => {
-    console.log(CartItems);
+    // console.log(CartItems);
   }, [CartItems]);
 
   const getItems = (newItem) =>{
@@ -28,10 +28,10 @@ function App() {
   return (
     <div className='app'>
       <BrowserRouter>
-        <Nav />
+        <Nav arraysize={CartItems.length} className='Navbar'/>
         <Routes> 
           <Route path='/' exact element={<Home />} />
-          <Route path='/cart' exact element={<Cart />} />
+          <Route path='/cart' exact element={<Cart items={CartItems}/>} />
           <Route path='/contact' exact element={<Contact />} />
           <Route path='/shop' exact element={<Shop passData={getItems} />} />
           <Route path='/shop/:id' exact element={<Item passData={getItems}/>} />
