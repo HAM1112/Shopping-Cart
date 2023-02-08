@@ -13,6 +13,7 @@ function Item({match}) {
     axios.get(`https://www.googleapis.com/books/v1/volumes/${id}?key=AIzaSyDsK20p3fvvNkpgE4xwfasAYMdcvlVRKTI`    )
       .then(res => {
         console.log(res.data);
+
         setBook(res.data)
       })
       .catch(err => {
@@ -32,12 +33,11 @@ function Item({match}) {
           </div>
           <div className='book-details'>
             <h1>{Book.volumeInfo.title}</h1>
-            <p>description</p>
-            <p>autors</p>
-            <p>no. page</p>
-            <p>publis date</p>
-            <p>publisher</p>
-            <p>rating</p>
+            <p className='authors-details'>{(Book.volumeInfo.authors).map((author)=>{return <div>{author}</div> })}</p>
+            <p>Pages : {Book.volumeInfo.pageCount}</p>
+            <p>Date ofpublication : {Book.volumeInfo.publishedDate}</p>
+            <p>Published by : {Book.volumeInfo.publisher}</p>
+            <p>Rating : {Book.volumeInfo.averageRating}</p>
            <span>price</span>
           
           </div>
