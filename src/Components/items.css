@@ -12,6 +12,25 @@
 .book-details {
     padding: 20px;
     flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.book-details > button{
+    background-color: #404258;
+    width: 100px;
+    padding: 5px;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    border-radius: 5px;
+}
+.book-details > button:hover{
+    color: #404258;
+    background-color: #ffffff;
+    border: 2px solid #404258;
+    cursor: pointer;
 }
 
 .book-image{
