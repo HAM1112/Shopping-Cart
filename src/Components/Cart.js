@@ -1,6 +1,7 @@
 import React from 'react'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import './Cart.css'
+import { Link } from 'react-router-dom';
 
 function Cart(props) {
   const [Items, setItems] = useState('');
@@ -17,10 +18,7 @@ function Cart(props) {
       });
       setTotal(total)
     }
-    console.log(Total)
   },[props])
-  
-  
   
   const handleClick = ()=>{
     alert("Items been checked out");
@@ -30,11 +28,14 @@ function Cart(props) {
   return (
     <div className='Cart'>
         {Items ? <div>
-
           {Items.map((item)=>{
             return (
               <div className='purchase-item'>
-                <div><img src={item.imageLink} alt="image"/></div>
+                <div>
+                  <Link to={`/item/${item.id}`}>
+                    <img src={item.imageLink} alt="image"/>
+                  </Link>
+                </div>
                 <h4>{item.title}</h4>
                 <div>Qty</div>
                 <div>${item.price}</div>
@@ -48,7 +49,6 @@ function Cart(props) {
             <button onClick={handleClick}>Checkout</button>
           </div>
           </div>
-
           : <div className='empty-msg'>
             Cart is empty...............
           </div>
@@ -57,5 +57,4 @@ function Cart(props) {
   )
 }
 
-export default Cart
-        
+export default Cart;

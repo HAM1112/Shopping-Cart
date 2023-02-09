@@ -34,7 +34,7 @@ function App() {
           <Route path='/cart' exact element={<Cart items={CartItems}/>} />
           <Route path='/contact' exact element={<Contact />} />
           <Route path='/shop' exact element={<Shop passData={getItems} />} />
-          <Route path='/shop/:id' exact element={<Item passData={getItems}/>} />
+          <Route path='/item/:id' exact element={<Item passData={getItems}/>} />
 
         </Routes>
       </BrowserRouter>

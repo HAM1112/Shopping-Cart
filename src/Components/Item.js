@@ -10,8 +10,6 @@ function Item(props) {
   const [Book, setBook] = useState('');
   const [Item, setItem] = useState('');
   
-
-
   useEffect(() => {
     axios.get(`https://www.googleapis.com/books/v1/volumes/${id}?key=AIzaSyDsK20p3fvvNkpgE4xwfasAYMdcvlVRKTI`    )
       .then(res => {
@@ -37,8 +35,6 @@ function Item(props) {
   }
 
   return (
-
-
     <div >  
         {Book? <div className='book-display'>
           <div className='book-image'>
@@ -58,7 +54,10 @@ function Item(props) {
                     title: Book.volumeInfo.title , 
                     imageLink: Book.volumeInfo.imageLinks.smallThumbnail, 
                     id:Book.id , 
-                    price: Book.volumeInfo.averageRating ? Book.volumeInfo.averageRating * 2.5 : 3.8 *2.5})}}>Add to Cart</button>
+                    price: Book.volumeInfo.averageRating ? Book.volumeInfo.averageRating * 2.5 : 3.8 *2.5}
+                    )
+                  }
+                }>Add to Cart</button>
           </div>
         </div> : <div className='loading'>Loading.....</div> }
       

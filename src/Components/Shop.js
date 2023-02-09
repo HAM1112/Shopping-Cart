@@ -6,12 +6,10 @@ import "./Shop.css"
 import { Link } from 'react-router-dom'
 
 function Shop(props) {
-
   const [Books, setBooks] = useState([]);
   const [Item, setItem] = useState('');
 
   useEffect(() => {
-  
     axios.get(`https://www.googleapis.com/books/v1/volumes?q=subject:fiction&maxResults=20&key=AIzaSyDsK20p3fvvNkpgE4xwfasAYMdcvlVRKTI`    )
       .then(res => {
         setBooks(res.data.items)
@@ -29,9 +27,7 @@ function Shop(props) {
     }
   }, [Item]);
 
-
   const handleAddCart = (item)=>{
-    //console.log(item);
     setItem(item)
   }
 
@@ -47,7 +43,7 @@ function Shop(props) {
           }
           const bookPrice = (bookRating*2.5)  
           return (
-            <Link to={`/shop/${book.id}`}>
+            <Link to={`/item/${book.id}`}>
               <div className='book-card' key={index}>
                 <img src={bookInfo.imageLinks.thumbnail} alt="" />
                 <h3>{bookInfo.title}</h3>
@@ -61,7 +57,10 @@ function Shop(props) {
                       title: bookInfo.title ,
                       imageLink: bookInfo.imageLinks.smallThumbnail,
                       id:book.id,
-                      price: bookPrice})}}>Add To Cart</button>
+                      price: bookPrice}
+                      )
+                    }
+                  }>Add To Cart</button>
               </div>
             </Link>
           )
