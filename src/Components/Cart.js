@@ -8,15 +8,30 @@ function Cart(props) {
   
   useEffect(()=>{
     setItems(props.items)
-    let total = 0;
-    console.log((props.items).map((item)=> {return total += item.price}))
+    let total = 0; 
+    if(props.items === ''){
+      console.log('props is empty')
+    }else{
+      props.items.forEach(item => {
+        total += item.price
+      });
+      setTotal(total)
+    }
+    console.log(Total)
   },[props])
   
-  console.log(Items);
+  
+  
+  const handleClick = ()=>{
+    alert("Items been checked out");
+    setItems('')
+  }
+  
   return (
     <div className='Cart'>
-        {Items ? 
-          Items.map((item)=>{
+        {Items ? <div>
+
+          {Items.map((item)=>{
             return (
               <div className='purchase-item'>
                 <div><img src={item.imageLink} alt="image"/></div>
@@ -25,7 +40,15 @@ function Cart(props) {
                 <div>${item.price}</div>
               </div>
             )
-          })
+          })}
+          <div className='checkout'>
+            <h2>Cart Total</h2>
+            <div>No. of items : {Items.length}</div>
+            <div>Total amount : ${Total}</div>
+            <button onClick={handleClick}>Checkout</button>
+          </div>
+          </div>
+
           : <div className='empty-msg'>
             Cart is empty...............
           </div>
