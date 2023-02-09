@@ -1,9 +1,16 @@
 import React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import './Cart.css'
 
 function Cart(props) {
-  const [Items, setItems] = useState(props.items);
+  const [Items, setItems] = useState('');
+  const [Total, setTotal] = useState(0);
+  
+  useEffect(()=>{
+    setItems(props.items)
+    let total = 0;
+    console.log((props.items).map((item)=> {return total += item.price}))
+  },[props])
   
   console.log(Items);
   return (
@@ -19,7 +26,9 @@ function Cart(props) {
               </div>
             )
           })
-          :null
+          : <div className='empty-msg'>
+            Cart is empty...............
+          </div>
         }
     </div>
   )

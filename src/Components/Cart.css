@@ -3,7 +3,7 @@
 
 }
 
-.purchase-item{
+.purchase-item , .empty-msg{
     display: grid;
     grid-template-columns: 1fr 2fr 1fr 1fr;
     padding: 10px;
@@ -17,5 +17,5 @@
 
 .purchase-item img{
     height: 100px;
-
 }
+
