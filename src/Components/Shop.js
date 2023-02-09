@@ -55,7 +55,13 @@ function Shop(props) {
                   <p>Rating :{bookRating}</p>
                   <p>${bookPrice}</p>
                 </div>
-                <button onClick={(e)=>{e.preventDefault();handleAddCart({title: bookInfo.title , imageLink: bookInfo.imageLinks.thumbnail, id:book.id})}}>Add To Cart</button>
+                <button onClick={(e)=>{
+                    e.preventDefault();
+                    handleAddCart({
+                      title: bookInfo.title ,
+                      imageLink: bookInfo.imageLinks.smallThumbnail,
+                      id:book.id,
+                      price: bookPrice})}}>Add To Cart</button>
               </div>
             </Link>
           )

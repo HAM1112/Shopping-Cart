@@ -1,0 +1,21 @@
+.Cart{
+    margin: 10rem;
+
+}
+
+.purchase-item{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #474E68;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px #000000;
+    align-items: center;
+    justify-content: space-between;
+}   
+
+.purchase-item img{
+    height: 100px;
+
+}

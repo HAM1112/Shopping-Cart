@@ -15,7 +15,7 @@ function Item(props) {
   useEffect(() => {
     axios.get(`https://www.googleapis.com/books/v1/volumes/${id}?key=AIzaSyDsK20p3fvvNkpgE4xwfasAYMdcvlVRKTI`    )
       .then(res => {
-        // console.log(res.data);
+        console.log(res.data);
         setBook(res.data)
       })
       .catch(err => {
@@ -52,7 +52,13 @@ function Item(props) {
             <p>Published by : {Book.volumeInfo.publisher}</p>
             {Book.volumeInfo.averageRating ? <p>Rating : {Book.volumeInfo.averageRating}</p> : <p>Rating : 3.8</p> }
             {Book.volumeInfo.averageRating ? <p>Price : ${(Book.volumeInfo.averageRating)*2.5}</p> : <p>Price : {(3.8)*2.5}</p> }
-            <button onClick={(e)=>{e.preventDefault();handleAddCart({title: Book.volumeInfo.title , imageLink: Book.volumeInfo.imageLinks.thumbnail, id:Book.id})}}>Add to Cart</button>
+            <button onClick={(e)=>{
+                e.preventDefault();
+                handleAddCart({
+                    title: Book.volumeInfo.title , 
+                    imageLink: Book.volumeInfo.imageLinks.smallThumbnail, 
+                    id:Book.id , 
+                    price: Book.volumeInfo.averageRating ? Book.volumeInfo.averageRating * 2.5 : 3.8 *2.5})}}>Add to Cart</button>
           </div>
         </div> : <div className='loading'>Loading.....</div> }
       
