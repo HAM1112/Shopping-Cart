@@ -23,6 +23,7 @@ function Cart(props) {
   const handleClick = ()=>{
     alert("Items been checked out");
     setItems('')
+    props.passData('')
   }
   
   return (

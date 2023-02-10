@@ -15,7 +15,7 @@ function App() {
   
   useEffect(() => {
     // console.log(CartItems);
-  }, [CartItems]);
+  }, []);
 
   const getItems = (newItem) =>{
     if(CartItems === ''){
@@ -31,7 +31,7 @@ function App() {
         <Nav arraysize={CartItems.length} className='Navbar'/>
         <Routes> 
           <Route path='/' exact element={<Home />} />
-          <Route path='/cart' exact element={<Cart items={CartItems}/>} />
+          <Route path='/cart' exact element={<Cart passData={setCartItems} items={CartItems}/>} />
           <Route path='/contact' exact element={<Contact />} />
           <Route path='/shop' exact element={<Shop passData={getItems} />} />
           <Route path='/item/:id' exact element={<Item passData={getItems}/>} />
